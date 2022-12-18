@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import img from "../imgs/download.jfif";
+import img from "../imgs/istockphoto-1308083607-170667a.jpg";
 export default function Landing_page() {
   const routes = [{ key: "Enter", route: "/postview" }];
   return (
