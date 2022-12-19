@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 
 import axios from "axios";
 export default function Form() {
+  const postview = useNavigate()
   let reset;
   let url = "https://instaclone-api-m4t7.onrender.com/user/api/v1/posts";
   const [data, setData] = useState({
@@ -35,6 +36,9 @@ export default function Form() {
         const response = await axios.post(url, formData);
         if (response.status === 200) {
           toast.success("Posted Successfully");
+      setTimeout(()=> {
+        postview("/postview")
+      },2500)
         }
       }
     } catch (e) {
